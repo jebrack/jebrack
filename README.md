@@ -1,16 +1,15 @@
-## Hi there 👋
+# Welcome — I'm Jenna Bracken 👋
 
-<!--
-**jebrack/jebrack** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+- 🎓 Program / Role:
+- 📍 Location:Edwarsdville, IL
+- 📫 Contact: jebrack@siue.edu
+- 🌱 I’m learning / interested in: Comsumer product, Media Campaigns, Marketing and Entrepreneurship
 
-Here are some ideas to get you started:
+## About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I'm originally from New Jersey but have been living in the midwest for over 2 years now. I love anything outdoors such as skiing, hiking, and fishing. I also love reading fiction and my current read is Iron Flame by Rebecca Yarros. Also, don't hate me but I'm a pizza snob 😂.
+
+## Links
+
+- Website/Portfolio: droptinegearco.com
+- LinkedIn: www.linkedin.com/in/jenna-bracken
