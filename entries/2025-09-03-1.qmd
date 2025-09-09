@@ -24,9 +24,15 @@ params:
 
 ## Response
 
-<!-- RESPONSE-START -->
+<!-- RESPONSE-START --> One claim I recently came across online stated that “Making your bed every day makes you 206% more likely to become a millionaire.” While this statement is catchy and might be intended to motivate people toward discipline and success, I was immediately skeptical of its accuracy. 
+To evaluate whether this claim holds any truth, I would apply the principles of empiricism and control to design a study that could test it objectively. Empiricism is the idea that knowledge should be based on observable and measurable evidence. Rather than accepting the claim at face value, I would gather real-world data to see if there is any actual correlation between bed-making habits and income level. 
+To do this, I would conduct a survey targeting a diverse sample of participants across different age groups, professions, and socioeconomic backgrounds. The survey would collect demographic data such as age, gender, education level, occupation, and current salary range. This would help ensure that the sample is representative and that the results are meaningful. 
+In addition to demographic information, the survey would ask participants about their bed-making habits using a Likert-style scale. The question might be phrased as: “How often do you make your bed in the morning?” with response options including: Always, Most of the time, Sometimes, Rarely, Never. 
+This format allows for a more nuanced understanding of behavior rather than a simple yes/no answer. The principle of control is equally important in designing a reliable study. Control involves accounting for other variables that might influence the outcome. In this case, factors such as education level, industry, geographic location, and work experience could all affect a person’s income independently of whether they make their bed. By controlling for these variables—either through statistical methods or by segmenting the data—I could better isolate whether bed-making has any real influence on financial success. 
+After collecting and analyzing the data, I would look for patterns or correlations between bed-making frequency and income level. If a strong, statistically significant relationship exists even after controlling for other factors, it might suggest that the claim has some merit. However, if no meaningful correlation is found, it would indicate that the claim is likely exaggerated or unfounded. 
+In conclusion, using empiricism and control allows us to move beyond flashy claims and test ideas with evidence. This approach helps ensure that conclusions are based on facts rather than assumptions or viral internet posts.
 
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.* <!-- RESPONSE-END -->
+<!-- RESPONSE-END -->
 
 ------------------------------------------------------------------------
 
