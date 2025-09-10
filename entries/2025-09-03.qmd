@@ -3,30 +3,29 @@ title: "2025-09-03"
 format:
   html: default
   pdf: default
-params:
+params:'r params$p1'
   course: "mc501"
   word_min: 450
   word_max: 500
   p1: 'Think of a media-related issue or question you find interesting (e.g., misinformation on social media, representation in film, streaming habits). Now imagine researching that issue without using any theory—just collecting facts. What would be missing from your findings? Reflect on how theory might deepen or improve your ability to explain or understand the issue. What questions might theory help you ask?'
-  p2: 'After reading about the social scientific, interpretive, and critical/cultural paradigms, which approach feels most aligned with how you think about research, or how you want to think about it? Why? Share a media topic you care about and describe how your chosen paradigm would shape your research questions, methods, and the kind of insights you might produce.'
-  p3: 'Pick one communication theory mentioned in this chapter (e.g., Cultivation Theory, Social Comparison Theory, Feminist Theory). Briefly describe how this theory interprets a real-world communication problem (e.g., violence in media, body image, online harassment). Then reflect on how your understanding of the issue changes when seen through that theoretical lens. What does the theory help you notice that you might not have otherwise?'
 ---
 
 ## Choose **one** prompt to answer
 
 > **Prompt A:** `r params$p1`
 
-> **Prompt B:** `r params$p2`
-
-> **Prompt C:** `r params$p3`
-
 ------------------------------------------------------------------------
 
 ## Response
 
-<!-- RESPONSE-START -->
-
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.* <!-- RESPONSE-END -->
+<!-- RESPONSE-START --> The source of the claim that “one egg a day is equivalent to five cigarettes” was a 2012 study published in the journal Atherosclerosis. The study found that individuals who consumed more than three egg yolks per week had increased plaque buildup in their carotid arteries. The researchers noted that the effect of egg yolks on plaque buildup was about two-thirds that of smoking cigarettes. However, this nuanced finding was sensationalized by media headlines, leading to widespread misinformation. The comparison was taken out of context and used to support various agendas, particularly within vegan advocacy groups and documentaries. 
+Personally, I first encountered this claim in the Netflix documentary Food, Inc., and it stuck with me for nearly a decade. The way it was presented made me question my own dietary choices, even though I later learned the claim was misleading. This documentary is just one example of a larger issue: the frequent spread of exaggerated or misleading health claims, especially those tied to weight loss. Social media platforms are saturated with content pushing weight loss agendas, often targeting vulnerable individuals who are actively seeking help or guidance. These claims are rarely backed by solid evidence and often exploit emotional appeals or fear-based messaging to gain traction.
+If I were to research this issue without using any theory, I would likely focus only on collecting statistical media data—comparing viewing statistics or engagement analytics. While this might provide some factual insights, it would miss critical dimensions of the issue, such as how and why the misinformation spread, and what factors influenced its acceptance.
+Without theory, I wouldn’t explore the social, psychological, or cultural dynamics that shape public understanding. Theory helps us ask deeper questions, such as: What role does media framing play in shaping public perception of health risks? How do confirmation bias and identity (e.g., dietary choices, ethical beliefs) affect how people interpret health claims? What mechanisms allow misinformation to gain traction and credibility on social platforms?
+Using theory—such as media framing theory, health communication models, or social identity theory—would allow me to approach the research more holistically. I would begin with in-depth interviews, asking participants about their confidence in making health-related decisions, where they typically receive health information (e.g., social media or medical professionals), their physical activity levels, and their eating habits.
+During open coding, I would look for recurring themes in participants' responses, such as statements like, “I’m always looking to social media for nutrition information that comes from informal videos.” I might code this as “Trusting social media.” As I move into axial coding, I would begin grouping related codes—such as “Not fact-checking” and “Trusting social media”—under broader categories like “Reliance on informal sources” or “Low information verification.”
+Finally, in the selective coding phase, I would identify a core category—perhaps “Low information verification”—that ties the data together. From there, I could develop a grounded theory suggesting that individuals with low physical activity and low confidence in their health decisions are more likely to rely on unverified nutrition information from social media.
+ <!-- RESPONSE-END -->
 
 ------------------------------------------------------------------------
 
