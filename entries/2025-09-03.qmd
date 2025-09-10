@@ -3,7 +3,7 @@ title: "2025-09-03"
 format:
   html: default
   pdf: default
-params:'r params$p1'
+params:
   course: "mc501"
   word_min: 450
   word_max: 500
