@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: _book
+  pre-render: scripts/update-chapters.R
 
 book:
   title: "Course Journal"
@@ -11,9 +12,6 @@ book:
     - index.qmd
     # --- auto-managed: do not edit below; scripts/update_chapters.R rewrites this ---
     # BEGIN AUTO
-    - entries/2025-09-03-1.qmd
-    - entries/2025-09-03-2.qmd
-    - entries/2025-09-03.qmd
     # END AUTO
     # --- end auto-managed ---
 

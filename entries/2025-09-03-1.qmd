@@ -16,15 +16,13 @@ params:
 
 > **Prompt A:** `r params$p1`
 
-> **Prompt B:** `r params$p2`
-
-> **Prompt C:** `r params$p3`
 
 ------------------------------------------------------------------------
 
 ## Response
 
-<!-- RESPONSE-START --> One claim I recently came across online stated that “Making your bed every day makes you 206% more likely to become a millionaire.” While this statement is catchy and might be intended to motivate people toward discipline and success, I was immediately skeptical of its accuracy. 
+<!-- RESPONSE-START --> 
+One claim I recently came across online stated that “Making your bed every day makes you 206% more likely to become a millionaire.” While this statement is catchy and might be intended to motivate people toward discipline and success, I was immediately skeptical of its accuracy. 
 To evaluate whether this claim holds any truth, I would apply the principles of empiricism and control to design a study that could test it objectively. Empiricism is the idea that knowledge should be based on observable and measurable evidence. Rather than accepting the claim at face value, I would gather real-world data to see if there is any actual correlation between bed-making habits and income level. 
 To do this, I would conduct a survey targeting a diverse sample of participants across different age groups, professions, and socioeconomic backgrounds. The survey would collect demographic data such as age, gender, education level, occupation, and current salary range. This would help ensure that the sample is representative and that the results are meaningful. 
 In addition to demographic information, the survey would ask participants about their bed-making habits using a Likert-style scale. The question might be phrased as: “How often do you make your bed in the morning?” with response options including: Always, Most of the time, Sometimes, Rarely, Never. 
