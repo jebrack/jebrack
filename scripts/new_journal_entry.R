@@ -6,12 +6,10 @@ new_journal_entry <- function(
 ) {
 	# 0) Helpers ---------------------------------------------------------------
 	trim <- function(x) sub("\\s+$", "", sub("^\\s+", "", x))
-	# remove one pair of matching outer quotes if present: "…", ‘…’, “…” or '…'
+	# remove one pair of matching outer quotes if present: "...", '...', "..." or '...'
 	trim_outer_quotes <- function(x) {
 		x <- trim(x)
 		if ((startsWith(x, "\"") && endsWith(x, "\"")) ||
-				(startsWith(x, "“") && endsWith(x, "”")) ||
-				(startsWith(x, "‘") && endsWith(x, "’")) ||
 				(startsWith(x, "'") && endsWith(x, "'"))) {
 			return(substring(x, 2L, nchar(x) - 1L))
 		}
@@ -111,7 +109,7 @@ if (interactive() && (sys.nframe() <= 1L || identical(parent.frame(), globalenv(
   else if (file.exists("prompts_mc501.csv")) "prompts_mc501.csv"
   else NULL
   if (is.null(pf)) stop("Could not find prompts_mc451.csv or prompts_mc501.csv in the current folder.", call. = FALSE)
-  cat("Enter the week number (2–14): ")
+  cat("Enter the week number (2-14): ")
   wk <- suppressWarnings(as.integer(readLines(con = stdin(), n = 1L)))
   if (is.na(wk)) stop("Invalid week number.", call. = FALSE)
   new_journal_entry(week = wk, prompts_file = pf)
