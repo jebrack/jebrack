@@ -7,18 +7,15 @@ params:
   course: "mc501"
   word_min: 450
   word_max: 500
-  p1: 'Choose either the Nazi medical experiments or the Tuskegee syphilis study and reflect on what that case teaches us about the need for ethical safeguards in research. Why do you think these events had such a lasting impact on how research is conducted today? How might studying these cases shape your behavior as a future researcher?'
+
   p2: 'Imagine you are researching a public social media platform like X (formerly Twitter), Reddit, or TikTok. Would you consider the content you’re analyzing to be public or private? Would you need to obtain informed consent? Why or why not? Reflect on the ethical gray areas that emerge in digital research and how you would navigate them.'
-  p3: 'Think ahead to a study you might conduct as part of this course. What would it look like to fully honor the principles of respect for persons, beneficence, and justice in your research? Identify at least one concrete action you would take during your study’s design or data collection to uphold each of these three ethical principles.'
+
 ---
 
 ## Choose **one** prompt to answer
 
-> **Prompt A:** `r params$p1`
-
 > **Prompt B:** `r params$p2`
 
-> **Prompt C:** `r params$p3`
 
 ------------------------------------------------------------------------
 
@@ -26,7 +23,13 @@ params:
 
 <!-- RESPONSE-START -->
 
-*Write your answer to **one** of the prompts here. Do not write anything else in this chapter.* <!-- RESPONSE-END -->
+If I were researching public social media platforms like X (formerly Twitter), Reddit, or TikTok, I would generally consider the content posted on these platforms to be public information. These platforms are designed for users to share thoughts, opinions, and media with a broad audience, often with the understanding that their posts may be viewed by strangers, especially if they keep their profiles on public. However, just because content is publicly accessible does not mean it is ethically straightforward to use in research.
+When analyzing posts from individual users, I believe it is important to approach the situation with sensitivity and respect for privacy. Even if a post is technically public, the user may not expect their content to be cited in academic or professional research. In these cases, I would either seek informed consent from the user or anonymize the post to protect their identity. This includes removing usernames, handles, and any other identifying information. Ethically, this helps avoid exposing individuals to unwanted attention or misinterpretation, especially if the content is personal, controversial, or emotionally charged.
+On the other hand, when referencing content from businesses or organizations on social media, I would consider that information to be public and appropriate to cite without obtaining consent—especially when the content is focused solely on the company or brand, such as advertising campaigns or promotional posts. Companies typically use social media for marketing, branding, and public communication, and their posts are intended to be seen and shared widely. As such, referencing a business’s post or image in research—especially when analyzing trends, engagement, or branding strategies—does not usually raise the same ethical concerns as citing individual users.
+That said, digital research presents many ethical gray areas. For example, what if a user deletes a post after it has been archived or cited? What if the content was shared publicly but originated from a private group or context? These scenarios challenge researchers to think critically about consent, context, and the potential impact of their work. Additionally, platforms like Reddit often include pseudonymous users who may not expect their posts to be linked to real-world identities, even if the content is public.
+What if the content is inappropriate, triggering, or vulgar? In such cases, researchers must carefully evaluate whether including the material serves a meaningful purpose in the study and how its inclusion might affect readers or participants. Sensitivity to context and audience is essential, and steps should be taken to provide content warnings or avoid unnecessary exposure to harmful material.
+To navigate these complexities, I would follow ethical research guidelines, such as those provided by institutional review boards (IRBs), and prioritize transparency, consent, and anonymity whenever possible. I would also consider the intent behind the post and the potential consequences and risk of including it in my research. Ultimately, ethical digital research requires balancing the accessibility of online content with a deep respect for the individuals behind it.
+ <!-- RESPONSE-END -->
 
 ------------------------------------------------------------------------
 

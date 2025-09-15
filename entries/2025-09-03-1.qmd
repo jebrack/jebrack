@@ -8,8 +8,7 @@ params:
   word_min: 450
   word_max: 500
   p1: 'Think about a claim you’ve seen online that you weren’t sure was true. How would the principles of empiricism and control help you design a study to test whether it was accurate?'
-  p2: 'Choose a topic you’re curious about in media or communication (e.g., the effect of streaming on movie watching, how politicians use TikTok, portrayals of families on TV). Write a specific research question about it. Then, briefly describe what you would do in each of the five stages of the research workflow (Conceptualization, Design, Data Collection, Data Analysis, Communication) to answer it.'
-  p3: 'Describe a time you learned a digital tool (in any context—school, work, a hobby) without really understanding the reasoning behind what you were doing. How might knowing the "why"—the tool-agnostic principles—have helped you use it more effectively, solve problems, or even choose a better tool for the task?'
+
 ---
 
 ## Choose **one** prompt to answer
