@@ -118,5 +118,55 @@
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>2025-09-03</span>"
     ]
+  },
+  {
+    "objectID": "entries/2025-09-15.html",
+    "href": "entries/2025-09-15.html",
+    "title": "5  2025-09-15",
+    "section": "",
+    "text": "5.1 Choose one prompt to answer",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2025-09-15</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-09-15.html#choose-one-prompt-to-answer",
+    "href": "entries/2025-09-15.html#choose-one-prompt-to-answer",
+    "title": "5  2025-09-15",
+    "section": "",
+    "text": "Prompt B: Think about a media-related topic that interests you (e.g., influencer culture, video game violence, media portrayals of mental health). Now imagine you are preparing to write a literature review on that topic. What kind of “gap” would you look for to justify a new study? Would it be a topical void, a contradiction, or an overlooked perspective? Why does that kind of gap matter in media research?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2025-09-15</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-09-15.html#response",
+    "href": "entries/2025-09-15.html#response",
+    "title": "5  2025-09-15",
+    "section": "5.2 Response",
+    "text": "5.2 Response\n\nA media-related topic that interests me is electronic word-of-mouth (eWOM) and how it influences consumer behavior and purchase decisions. eWOM refers to any positive or negative statement made by potential, actual, or former customers about a product or company, which is made available to a multitude of people and institutions via the internet. With the rise of social media platforms, eWOM has become a powerful force in shaping consumer perceptions and driving engagement. I recently read the article “Electronic word of mouth and consumer engagement on social media: A literature analysis” by Ismagilova et al. (2020), which provided a comprehensive overview of existing research on eWOM. One of the key takeaways from the article was the identification of several topical voids in the current literature. For example, while many studies have examined the impact of eWOM on purchase intentions, fewer have explored the emotional and psychological mechanisms that underlie consumer responses to eWOM. Specifically, the role of sentiment, tone, and emotional appeal in eWOM messages remains under-researched. This gap is important because emotional content can significantly influence how consumers interpret and act on online reviews and recommendations. Another notable gap is the lack of cross-cultural research in the field. The article points out that most studies on eWOM are conducted in Western contexts, which limits the generalizability of findings. Cultural factors can influence how consumers perceive credibility, trustworthiness, and relevance of eWOM. For instance, collectivist cultures may place more emphasis on community opinions, while individualist cultures may prioritize personal experiences. Exploring these cultural differences could provide a more nuanced understanding of eWOM’s global impact. Additionally, the article highlights a need for more research on platform-specific dynamics. Different social media platforms have unique affordances and user behaviors, which can affect how eWOM is generated, shared, and received. For example, the brevity of Twitter posts versus the visual nature of Instagram content may lead to different consumer engagement patterns. Understanding these platform-specific nuances could help marketers tailor their strategies more effectively. In preparing to write a literature review on eWOM, I would focus on identifying these topical voids and overlooked perspectives as justification for a new study. These gaps matter in media research because they highlight areas where our understanding is incomplete or biased. Addressing them can lead to more inclusive, accurate, and actionable insights. This topic is especially relevant to me personally, as I am in the process of starting my own business and preparing to launch a new product campaign. Understanding how eWOM influences consumer decision-making will be critical in shaping my marketing strategy. Moreover, filling these gaps can help businesses better understand consumer behavior, improve customer engagement strategies, and enhance the effectiveness of digital marketing campaigns. Ultimately, identifying and addressing gaps in media research—whether they are topical voids, contradictions, or overlooked perspectives—is essential for advancing the field and ensuring that research remains relevant in a rapidly evolving digital landscape.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2025-09-15</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-09-15.html#word-count-range-check",
+    "href": "entries/2025-09-15.html#word-count-range-check",
+    "title": "5  2025-09-15",
+    "section": "5.3 Word Count & Range Check",
+    "text": "5.3 Word Count & Range Check\n\n\n**Word count:** 0  \n\n\n**Required range (MC501):** 450–500 words  \n\n\n**Status:** ❌ Out of range",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2025-09-15</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Journal",
+    "section": "",
+    "text": "This journal renders as a book. Each dated entry is a chapter.\n\nMC 451 entries: 250–300 words\nAt the end of each chapter you’ll see three prompts. Answer only one.\nWrite your answer in the Response box; the page shows an automatic word count and whether you’re in range.\n\n\n0.0.1 Add a new entry\n\nIn R, run: source(\"scripts/new_journal_entry.R\")\nA new chapter like entries/2025-09-01.qmd appears with three prompts injected.\nThe script updates _quarto.yml so the new entry is included in the book.\nRender the book: click Render in RStudio or run quarto render.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journal Home</span>"
+    ]
   }
 ]

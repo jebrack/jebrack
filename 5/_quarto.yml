@@ -2,19 +2,19 @@ project:
   type: book
   output-dir: _book
   pre-render: scripts/update-chapters.R
+
 book:
-  title: Course Journal
-  author: YOUR NAME
+  title: "Course Journal"
+  author: "YOUR NAME"
   date: today
-  downloads:
-  - pdf
-  - epub
+  downloads: [pdf, epub]
   chapters:
-  - index.qmd
-  - entries/2025-09-03-1.qmd
-  - entries/2025-09-03-2.qmd
-  - entries/2025-09-03.qmd
-  - entries/2025-09-15.qmd
+    - index.qmd
+    # --- auto-managed: do not edit below; scripts/update_chapters.R rewrites this ---
+    # BEGIN AUTO
+    # END AUTO
+    # --- end auto-managed ---
+
 format:
   html:
     toc: true
