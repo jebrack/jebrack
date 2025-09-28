@@ -1,0 +1,72 @@
+---
+title: "2025-09-28"
+format:
+  html: default
+  pdf: default
+params:
+  course: "mc501"
+  word_min: 450
+  word_max: 500
+
+  p2: 'Imagine you are planning a study on how college students interact with AI tools like ChatGPT. Would you choose a probability sampling method or a non-probability one? Why? Consider your research goals—do you want to generalize to all college students or understand a specific group more deeply? Explain your choice and what trade-offs it involves in terms of access, time, cost, and generalizability.'
+
+---
+
+## Choose **one** prompt to answer
+
+
+> **Prompt B:** `r params$p2`
+
+
+
+---
+
+## Response
+
+<!-- RESPONSE-START -->
+If I were planning a study on how college students interact with AI tools like ChatGPT, I would choose a non-probability sampling method. This decision is based on both the nature of the research and the practical considerations involved in conducting the study. Since AI tools like ChatGPT are relatively new and rapidly evolving, there is limited existing research and few established theories. Therefore, my study would likely focus on exploratory research questions rather than testing a specific hypothesis. The goal would be to gain a deeper understanding of how students use these tools, what motivates their usage, and how it affects their academic behavior.
+Non-probability sampling methods, such as convenience sampling or purposive sampling, are well-suited for exploratory research. These methods allow researchers to select participants who are readily accessible or who meet specific criteria relevant to the study. If I were to use convenience sampling, I might distribute my survey electronically to students on a single university campus, targeting those who are easily accessible. Alternatively, if I opted for purposive sampling, I would intentionally select students who are known to use ChatGPT regularly or who are enrolled in courses that promote the use of AI tools. Either of these approaches would help me gather insights from a targeted group, even if the findings are not statistically generalizable to all college students.
+One of the key trade-offs in choosing non-probability sampling is generalizability. Unlike probability sampling, which uses random selection to ensure that every member of the population has an equal chance of being included, non-probability sampling does not support broad generalizations. However, in the early stages of research—especially when studying emerging technologies—depth of understanding can be more valuable. The insights gained from a focused group can inform future studies that may use probability sampling to test hypotheses on a larger scale.
+In terms of access, time, and cost, non-probability sampling is often more efficient. Recruiting participants through convenience sampling, for example, can be done quickly and with minimal resources. This is particularly important for student researchers or small teams with limited budgets. Additionally, because AI usage among students may vary widely depending on factors like major, year in school, or familiarity with technology, a purposive sample can help ensure that the study includes participants who are most relevant to the research questions.
+Chapter 7 emphasizes that sampling decisions should align with the goals of the research. If the aim is to make statistical inferences about a population, probability sampling is ideal. But if the goal is to explore a phenomenon in depth and generate new ideas or theories, non-probability sampling is often more appropriate. In this case, my goal is not to generalize to all college students but to understand how a specific group interacts with ChatGPT. Therefore, non-probability sampling offers the flexibility and focus needed to conduct meaningful research in a timely and cost-effective way.
+<!-- RESPONSE-END -->
+
+---
+
+## Word Count & Range Check
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+get_response_text <- function() {
+  f <- knitr::current_input()
+  if (is.null(f) || !file.exists(f)) return("")
+  x <- readLines(f, warn = FALSE)
+  # Find the lines that EXACTLY match the start/end markers
+  s <- grep("^<!-- RESPONSE-START -->$", x)
+  e <- grep("^<!-- RESPONSE-END -->$", x)
+  if (length(s) != 1 || length(e) != 1 || e <= s) return("")
+  paste(x[(s + 1L):(e - 1L)], collapse = "\n")
+}
+count_words <- function(txt) {
+  # Remove code blocks and inline code before counting
+  txt <- gsub("```[\\s\\S]*?```", " ", txt, perl = TRUE)
+  txt <- gsub("`[^`]*`", " ", txt, perl = TRUE)
+  # Keep letters, numbers, spaces, hyphens, and apostrophes
+  txt <- gsub("[^\\p{L}\\p{N}\\s'-]", " ", txt, perl = TRUE)
+  # Split by whitespace and count non-empty words
+  words <- unlist(strsplit(txt, "\\s+", perl = TRUE))
+  words <- words[nzchar(words)]
+  length(words)
+}
+txt <- get_response_text()
+n <- count_words(txt)
+minw <- as.integer(params$word_min)
+maxw <- as.integer(params$word_max)
+in_range <- n >= minw && n <= maxw
+cat(sprintf("**Word count:** %d  \n", n))
+cat(sprintf("**Required range (%s):** %d–%d words  \n",
+            toupper(params$course), minw, maxw))
+cat(if (in_range) "**Status:** ✅ In range\n" else "**Status:** ❌ Out of range\n")
+```

@@ -62,15 +62,26 @@ new_journal_entry <- function(
 	body <- lines[(head_end + 1L):length(lines)]
 
 	# 5) Build a fresh YAML header (no regex edits) ---------------------------
+
 	day <- as.character(as.Date(date))
+	week_str <- sprintf("%02d", as.integer(week))
+	# Compose filename: course_weekNN_YYYY-MM-DD.qmd
+	out_basename <- sprintf("%s_week%s_%s.qmd", course, week_str, day)
+	out_dir <- "entries"
+	if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
+	out <- file.path(out_dir, out_basename)
+
+	# Add week/chapter and date to YAML and body
 	header <- c(
 		"---",
-		sprintf('title: "%s"', day),
+		sprintf('title: "%s Reflection Journal (Week %s, %s)"', course, week_str, day),
 		"format:",
 		"  html: default",
 		"  pdf: default",
 		"params:",
 		sprintf('  course: "%s"', course),
+		sprintf('  week: "%s"', week_str),
+		sprintf('  date: "%s"', day),
 		sprintf("  word_min: %d", word_min),
 		sprintf("  word_max: %d", word_max),
 		sprintf("  p1: %s", yaml_sq(p1)),
@@ -79,12 +90,14 @@ new_journal_entry <- function(
 		"---"
 	)
 
-	# 6) Write entry -----------------------------------------------------------
-	out_dir <- "entries"
-	if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
-	out <- file.path(out_dir, paste0(day, ".qmd"))
+	# Insert a summary line at the top of the body
+	summary_line <- sprintf(
+	  "**Course:** %s  |  **Week/Chapter:** %s  |  **Date:** %s\n",
+	  course, week_str, day
+	)
+	body2 <- c(summary_line, body)
 
-	writeLines(c(header, body), out, useBytes = TRUE)
+	writeLines(c(header, body2), out, useBytes = TRUE)
 	message("Created: ", out)
 
 	# 7) Update the book TOC ---------------------------------------------------

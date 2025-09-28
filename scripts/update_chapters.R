@@ -1,37 +1,47 @@
-# Rewrites the "chapters" section of _quarto.yml to include entries/ in order.
-# If files are named like week_02.qmd, week_03.qmd, they are sorted numerically by week.
-# Otherwise, falls back to alphabetical.
-update_chapters <- function(qyml = "_quarto.yml") {
-  if (!file.exists(qyml)) stop("Cannot find _quarto.yml", call. = FALSE)
-  y <- readLines(qyml, warn = FALSE)
+# scripts/update-chapters.R
 
-  beg <- grep("^\\s*# BEGIN AUTO\\s*$", y)
-  end <- grep("^\\s*# END AUTO\\s*$", y)
-  if (length(beg) != 1 || length(end) != 1 || end <= beg) {
-    stop("Auto-managed markers not found or out of order in _quarto.yml", call. = FALSE)
-  }
+# This script automatically updates the list of chapters in _quarto.yml
+# to include all .qmd files from the 'entries/' directory.
+# It runs automatically before the book is rendered.
 
-  files <- list.files("entries", pattern = "\\.qmd$", full.names = TRUE)
-  if (length(files)) {
-    base <- basename(files)
-    # try to parse week numbers from "week_XX.qmd"
-    wk <- suppressWarnings(as.integer(sub("^week_([0-9]+)\\.qmd$", "\\1", tolower(base))))
-    if (all(!is.na(wk))) {
-      ord <- order(wk)
-      base <- base[ord]
-    } else {
-      base <- sort(base)
-    }
-    rel <- file.path("entries", base)
-    lines <- paste0("    - ", rel)
-  } else {
-    rel <- character()
-    lines <- "    # (no entries yet)"
-  }
+library(yaml)
 
-  y_new <- c(y[1:beg], lines, y[end:length(y)])
-  writeLines(y_new, qyml)
-  invisible(rel)
-}
+# --- Configuration ---
+quarto_yaml_path <- "_quarto.yml"
+entries_dir <- "entries"
+# --- End Configuration ---
 
-if (sys.nframe() == 0L) update_chapters()
+# Read the existing _quarto.yml file
+quarto_config <- read_yaml(quarto_yaml_path)
+
+# Find all .qmd files in the entries directory, sorted alphabetically
+entry_files <- list.files(
+  path = entries_dir,
+  pattern = "\\.qmd$",
+  full.names = TRUE
+)
+entry_files <- sort(entry_files)
+
+# Preserve any existing chapters that are not in the entries/ directory (like index.qmd)
+existing_chapters <- quarto_config$book$chapters
+other_chapters <- existing_chapters[!grepl(paste0("^", entries_dir), existing_chapters)]
+
+# Combine the non-entry chapters with the newly found entry files
+# This handles additions, deletions, and renames automatically.
+new_chapters <- c(other_chapters, entry_files)
+
+# Update the configuration object
+quarto_config$book$chapters <- new_chapters
+
+# Write the updated configuration back to the _quarto.yml file
+write_yaml(quarto_config,
+           quarto_yaml_path,
+           handlers = list(
+             logical = function(x) {
+               result <- ifelse(x, "true", "false")
+               class(result) <- "verbatim"
+               return(result)
+             }
+           ))
+
+cat("Successfully synchronized chapters in _quarto.yml.\n")
