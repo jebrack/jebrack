@@ -18,6 +18,7 @@ book:
   - entries/2025-09-23.qmd
   - entries/2025-09-28.qmd
   - entries/2025-10-07.qmd
+  - entries/2025-10-13.qmd
 format:
   html:
     toc: true
