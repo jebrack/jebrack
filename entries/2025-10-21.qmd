@@ -1,0 +1,71 @@
+---
+title: "2025-10-21"
+format:
+  html: default
+  pdf: default
+params:
+  course: "mc501"
+  word_min: 450
+  word_max: 500
+  
+  p3: 'Experiments often require researchers to deceive participants or control aspects of their environment. Reflect on how you feel about that. Do you think the benefits of experimental knowledge are worth these trade-offs? What would be essential to include in your debrief if you had to deceive participants in your study?'
+---
+
+## Choose **one** prompt to answer
+
+
+> **Prompt C:** `r params$p3`
+
+---
+
+## Response
+
+<!-- RESPONSE-START -->
+As someone who tends to be skeptical, I often question whether the benefits of experimental knowledge are always worth the ethical trade-offs, especially when deception or manipulation is involved. While I understand that experiments are essential for advancing science and improving our understanding of human behavior, I believe there are limits to what should be considered acceptable in research practices.
+In particular, I’m concerned about experiments in the medical field where new drugs or treatments are tested without fully understanding their potential effects. The risks to participants can be significant, and I don’t always trust that every study is conducted with the highest ethical standards. History has shown us that unethical research can have devastating consequences, and that makes me cautious about supporting studies that involve deception or manipulation without clear safeguards.
+That said, I do recognize that some experiments—especially those that do not cause physical or psychological harm—can yield valuable insights that benefit society. For example, behavioral studies that involve minor deception, such as withholding the true purpose of the study to prevent bias, can be acceptable if they are conducted responsibly. In these cases, the knowledge gained can outweigh the minimal risks involved, provided that participants are treated with respect and care throughout the process.
+If I were conducting a study that required deception, I would only use it as a last resort—after thoroughly exploring all non-deceptive alternatives. The deception would need to be as minimal and non-invasive as possible, and I would take every precaution to ensure that it does not cause psychological distress or harm. The ethical principle of “do no harm” should always guide research decisions.
+A comprehensive debriefing would be absolutely essential following the study. During the debrief, I would clearly explain the nature and purpose of the deception, why it was necessary, and how it contributed to the research goals. I would also provide participants with the opportunity to ask questions and express any concerns they might have. Addressing any emotional or psychological discomfort would be a top priority, and I would ensure that participants leave the study feeling respected and valued.
+Additionally, I would make sure that participants are fully informed of their rights both before and after the study. This includes the right to withdraw at any time, the right to confidentiality, and the right to access support if needed. Transparency and respect are key to maintaining ethical standards in research, especially when deception is involved.
+In conclusion, while I remain cautious about the use of deception in experiments, I acknowledge that it can be a useful tool when applied ethically and responsibly. The benefits of experimental knowledge can be significant, but they should never come at the expense of participant well-being. Ethical research must prioritize informed consent, minimize harm, and ensure that participants are treated with dignity throughout the entire process.
+<!-- RESPONSE-END -->
+
+---
+
+## Word Count & Range Check
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+get_response_text <- function() {
+  f <- knitr::current_input()
+  if (is.null(f) || !file.exists(f)) return("")
+  x <- readLines(f, warn = FALSE)
+  # Find the lines that EXACTLY match the start/end markers
+  s <- grep("^<!-- RESPONSE-START -->$", x)
+  e <- grep("^<!-- RESPONSE-END -->$", x)
+  if (length(s) != 1 || length(e) != 1 || e <= s) return("")
+  paste(x[(s + 1L):(e - 1L)], collapse = "\n")
+}
+count_words <- function(txt) {
+  # Remove code blocks and inline code before counting
+  txt <- gsub("```[\\s\\S]*?```", " ", txt, perl = TRUE)
+  txt <- gsub("`[^`]*`", " ", txt, perl = TRUE)
+  # Keep letters, numbers, spaces, hyphens, and apostrophes
+  txt <- gsub("[^\\p{L}\\p{N}\\s'-]", " ", txt, perl = TRUE)
+  # Split by whitespace and count non-empty words
+  words <- unlist(strsplit(txt, "\\s+", perl = TRUE))
+  words <- words[nzchar(words)]
+  length(words)
+}
+txt <- get_response_text()
+n <- count_words(txt)
+minw <- as.integer(params$word_min)
+maxw <- as.integer(params$word_max)
+in_range <- n >= minw && n <= maxw
+cat(sprintf("**Word count:** %d  \n", n))
+cat(sprintf("**Required range (%s):** %d–%d words  \n",
+            toupper(params$course), minw, maxw))
+cat(if (in_range) "**Status:** ✅ In range\n" else "**Status:** ❌ Out of range\n")
+```
