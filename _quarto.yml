@@ -20,6 +20,7 @@ book:
   - entries/2025-10-07.qmd
   - entries/2025-10-13.qmd
   - entries/2025-10-21.qmd
+  - entries/2025-10-28.qmd
 format:
   html:
     toc: true
