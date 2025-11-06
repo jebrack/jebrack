@@ -408,5 +408,45 @@
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>2025-10-28</span>"
     ]
+  },
+  {
+    "objectID": "entries/2025-11-06.html",
+    "href": "entries/2025-11-06.html",
+    "title": "12  2025-11-06",
+    "section": "",
+    "text": "12.1 Choose one prompt to answer",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>2025-11-06</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-11-06.html#choose-one-prompt-to-answer",
+    "href": "entries/2025-11-06.html#choose-one-prompt-to-answer",
+    "title": "12  2025-11-06",
+    "section": "",
+    "text": "Prompt C: The chapter argues that wrangling is not just technical work—it’s interpretive. Think about a time you had to make a judgment call while organizing information (e.g., editing a document, categorizing files, formatting content). How might similar interpretive choices show up in data wrangling? How does this shape the final story your data tells?",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>2025-11-06</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-11-06.html#response",
+    "href": "entries/2025-11-06.html#response",
+    "title": "12  2025-11-06",
+    "section": "12.2 Response",
+    "text": "12.2 Response\n\nIn my role as a social media coordinator at Southern Illinois University Edwardsville, I regularly engage in data analysis to guide our content strategy. One particular experience that stands out involved analyzing Instagram Facebook, X and LinkedIn analytics to understand patterns in user engagement and follower behavior. Specifically, I was investigating whether there was a correlation between the frequency of our posts and the number of unfollows we received on the Instagram platform. At first glance, this seemed like a straightforward technical task—just plotting data points and looking for trends. However, I quickly realized that interpreting this data required a deeper, more nuanced approach. For example, I noticed that during certain periods, such as Homecoming week, our posting frequency increased significantly. While this spike in activity sometimes coincided with a rise in unfollows, it also brought a surge in engagement—likes, comments, and shares. This presented a dilemma: should I interpret the unfollows as a negative consequence of overposting, or as an acceptable trade-off for the increased visibility and interaction during a major campus event? This is where the interpretive nature of data wrangling became clear. I had to make a judgment call about how to categorize and contextualize these events in my analysis. Additionally, I observed seasonal fluctuations in engagement. During the winter and summer months, student activity on social media tends to decline, likely due to breaks and reduced campus events. If I didn’t account for these seasonal patterns, my analysis might falsely suggest that our content was underperforming. To address this, I adapted my spreadsheet to include flags for major events and academic calendar shifts. This allowed me to segment the data more meaningfully and avoid misleading conclusions. These interpretive choices are central to data wrangling. As the chapter emphasizes, wrangling isn’t just about cleaning and organizing data—it’s about making informed decisions that shape how the data is understood and used. Every time I decide which variables to include, how to categorize certain time periods, or which anomalies to treat as exceptions, I’m influencing the narrative that emerges from the data. Ultimately, these decisions shape the story our data tells. If I had ignored contextual factors like Homecoming or seasonal breaks, I might have recommended reducing our posting frequency, potentially missing out on key engagement opportunities. By recognizing the interpretive nature of data wrangling, I was able to present a more accurate and actionable analysis to my team. This experience taught me that data doesn’t speak for itself—it requires thoughtful interpretation, especially when it’s tied to human behavior and social contexts. In marketing and communications, where audience engagement is dynamic and multifaceted, understanding the story behind the numbers is just as important as the numbers themselves.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>2025-11-06</span>"
+    ]
+  },
+  {
+    "objectID": "entries/2025-11-06.html#word-count-range-check",
+    "href": "entries/2025-11-06.html#word-count-range-check",
+    "title": "12  2025-11-06",
+    "section": "12.3 Word Count & Range Check",
+    "text": "12.3 Word Count & Range Check\n\n\n**Word count:** 458  \n\n\n**Required range (MC501):** 450–500 words  \n\n\n**Status:** ✅ In range",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>2025-11-06</span>"
+    ]
   }
 ]

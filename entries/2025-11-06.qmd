@@ -1,0 +1,68 @@
+---
+title: "2025-11-06"
+format:
+  html: default
+  pdf: default
+params:
+  course: "mc501"
+  word_min: 450
+  word_max: 500
+  p3: 'The chapter argues that wrangling is not just technical work—it’s interpretive. Think about a time you had to make a judgment call while organizing information (e.g., editing a document, categorizing files, formatting content). How might similar interpretive choices show up in data wrangling? How does this shape the final story your data tells?'
+---
+
+## Choose **one** prompt to answer
+
+> **Prompt C:** `r params$p3`
+
+---
+
+## Response
+
+<!-- RESPONSE-START -->
+In my role as a social media coordinator at Southern Illinois University Edwardsville, I regularly engage in data analysis to guide our content strategy. One particular experience that stands out involved analyzing Instagram Facebook, X and LinkedIn analytics to understand patterns in user engagement and follower behavior. Specifically, I was investigating whether there was a correlation between the frequency of our posts and the number of unfollows we received on the Instagram platform. At first glance, this seemed like a straightforward technical task—just plotting data points and looking for trends. However, I quickly realized that interpreting this data required a deeper, more nuanced approach.
+For example, I noticed that during certain periods, such as Homecoming week, our posting frequency increased significantly. While this spike in activity sometimes coincided with a rise in unfollows, it also brought a surge in engagement—likes, comments, and shares. This presented a dilemma: should I interpret the unfollows as a negative consequence of overposting, or as an acceptable trade-off for the increased visibility and interaction during a major campus event? This is where the interpretive nature of data wrangling became clear. I had to make a judgment call about how to categorize and contextualize these events in my analysis.
+Additionally, I observed seasonal fluctuations in engagement. During the winter and summer months, student activity on social media tends to decline, likely due to breaks and reduced campus events. If I didn’t account for these seasonal patterns, my analysis might falsely suggest that our content was underperforming. To address this, I adapted my spreadsheet to include flags for major events and academic calendar shifts. This allowed me to segment the data more meaningfully and avoid misleading conclusions.
+These interpretive choices are central to data wrangling. As the chapter emphasizes, wrangling isn’t just about cleaning and organizing data—it’s about making informed decisions that shape how the data is understood and used. Every time I decide which variables to include, how to categorize certain time periods, or which anomalies to treat as exceptions, I’m influencing the narrative that emerges from the data.
+Ultimately, these decisions shape the story our data tells. If I had ignored contextual factors like Homecoming or seasonal breaks, I might have recommended reducing our posting frequency, potentially missing out on key engagement opportunities. By recognizing the interpretive nature of data wrangling, I was able to present a more accurate and actionable analysis to my team. This experience taught me that data doesn’t speak for itself—it requires thoughtful interpretation, especially when it’s tied to human behavior and social contexts. In marketing and communications, where audience engagement is dynamic and multifaceted, understanding the story behind the numbers is just as important as the numbers themselves.
+
+<!-- RESPONSE-END -->
+
+---
+
+## Word Count & Range Check
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+get_response_text <- function() {
+  f <- knitr::current_input()
+  if (is.null(f) || !file.exists(f)) return("")
+  x <- readLines(f, warn = FALSE)
+  # Find the lines that EXACTLY match the start/end markers
+  s <- grep("^<!-- RESPONSE-START -->$", x)
+  e <- grep("^<!-- RESPONSE-END -->$", x)
+  if (length(s) != 1 || length(e) != 1 || e <= s) return("")
+  paste(x[(s + 1L):(e - 1L)], collapse = "\n")
+}
+count_words <- function(txt) {
+  # Remove code blocks and inline code before counting
+  txt <- gsub("```[\\s\\S]*?```", " ", txt, perl = TRUE)
+  txt <- gsub("`[^`]*`", " ", txt, perl = TRUE)
+  # Keep letters, numbers, spaces, hyphens, and apostrophes
+  txt <- gsub("[^\\p{L}\\p{N}\\s'-]", " ", txt, perl = TRUE)
+  # Split by whitespace and count non-empty words
+  words <- unlist(strsplit(txt, "\\s+", perl = TRUE))
+  words <- words[nzchar(words)]
+  length(words)
+}
+txt <- get_response_text()
+n <- count_words(txt)
+minw <- as.integer(params$word_min)
+maxw <- as.integer(params$word_max)
+in_range <- n >= minw && n <= maxw
+cat(sprintf("**Word count:** %d  \n", n))
+cat(sprintf("**Required range (%s):** %d–%d words  \n",
+            toupper(params$course), minw, maxw))
+cat(if (in_range) "**Status:** ✅ In range\n" else "**Status:** ❌ Out of range\n")
+```
