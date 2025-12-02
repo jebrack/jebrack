@@ -1,0 +1,216 @@
+---
+title: "Assignment 2: Initial Findings Memo"
+author: "[Your Name Here]"
+format: 
+  pdf:
+    documentclass: article
+    fontfamily: Inter
+    fontsize: 11pt
+    margin-left: 1in
+    margin-right: 1in
+    margin-top: 1in
+    margin-bottom: 1in
+editor: visual
+---
+
+# Assignment 2: "The First Look"
+
+## Conceptual Focus
+
+This assignment covers **Chapter 13: Descriptive Statistics and Visualization**. Last week, we finished our "mise en place." Now, we need to find the "story" in the data. This is where we find the "wow" insights for the client. As your slides note, we will use two toolkits:
+* **Descriptive Statistics:** Summarizing data with precision (e.g., `summary()`, `count()`).
+* **Data Visualization:** Summarizing data with intuitive pictures (e.g., `ggplot2`).
+
+---
+
+# Initial Insights Memo
+
+**To:** Alex Chen (Director of Insights)
+
+**From:** [Your Name]
+
+**Subject:** Initial Insights for 2025 Digital Landscape Brief
+
+## Section 1: Sample Snapshot
+
+[Write your summary of the sample here. Describe the political party and racial/ethnic breakdown of the sample in plain English, referencing the tables below. What does this tell you about our sample?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-desc-cat"
+# This chunk runs the code from the appendix 
+# and displays ONLY the output tables.
+```
+
+## Section 2: Potential Client-Facing Insights
+
+[Write your 2-3 sentence "active title" or caption for the histogram below. Answer the write-up question: Is the data normally distributed, or skewed? What does this tell us about the "average" social media user?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-hist"
+# This chunk displays the histogram.
+```
+
+[Write your 2-3 sentence caption for the bar chart below. What's the simple, client-facing takeaway?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-bar"
+# This chunk displays the bar chart.
+```
+
+[Write your 2-3 sentence caption for the boxplot below. Answer the write-up question: Based *only on the visual*, do platform use habits appear to differ by political affiliation?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-boxplot"
+# This chunk displays the boxplot.
+```
+
+[Write your 2-3 sentence caption for the stacked bar chart below. Answer the write-up question: What does this chart suggest about the user base of TikTok? Why would this be important for our non-profit client to know?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-stackedbar"
+# This chunk displays the stacked bar chart.
+```
+
+[Write your 2-3 sentence caption for the faceted histogram below. How does Facebook "purpose" seem to differ across the three political groups?]
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-facet"
+# This chunk displays the faceted histogram.
+```
+
+\newpage
+
+# Appendix: R Code and Commentary
+
+## 1. Setup
+
+[Add your commentary. What are we loading here?]
+
+```{r}
+#| label: "chunk-setup"
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+load("w144_wrangled.RData") # Load data from Assignment 1
+```
+
+## 2. Descriptive Statistics (Categorical)
+
+[Add your commentary. Explain what `count()` and `mutate(percent = ...)` are doing. What do these tables tell us about our sample?]
+
+```{r}
+#| label: "chunk-desc-cat"
+#| echo: true
+
+# Get frequencies for party_simple
+# Hint: Use count() on the 'party_simple' variable, then use mutate() to calculate the percent.
+w144_wrangled %>% 
+  count(party_simple) %>%
+  mutate(percent = n / sum(n))
+
+# Get frequencies for f_race
+# Hint: Use count() on the 'f_race' variable, then use mutate() to calculate the percent.
+...
+```
+
+## 3. Descriptive Statistics (Numeric)
+
+[Add your commentary. What key numbers does `summary()` give us? What is the difference between the Mean and the Median, and why do we care?]
+
+```{r}
+#| label: "chunk-desc-num"
+#| echo: true
+
+# Get summary for platform_count
+# Hint: Use summary() on the 'platform_count' variable.
+...
+
+# Get summary for fb_purpose_score
+# Hint: Use summary() on the 'fb_purpose_score' variable.
+...
+```
+
+## 4. Visualization (Single Numeric)
+
+[Add your commentary. Explain the `ggplot` code. What is the `aes`? What is the `geom`? This is the "Histogram" from Slide 15.]
+
+```{r}
+#| label: "chunk-viz-hist"
+#| echo: true
+
+# Create a histogram of platform_count
+ggplot(w144_wrangled, aes(x = ...)) + # Replace ...
+  geom_histogram(binwidth = 1, fill = "steelblue", color = "white") +
+  labs(title = "Distribution of Platform Count", x = "Number of Platforms Used", y = "Count")
+```
+
+## 5. Visualization (Single Categorical)
+
+[Add your commentary. This is the "Bar Chart" from Slide 15.]
+
+```{r}
+#| label: "chunk-viz-bar"
+#| echo: true
+
+# Create a bar chart of party_simple
+ggplot(w144_wrangled, aes(x = ...)) + # Replace ...
+  geom_bar(fill = "steelblue") +
+  labs(title = "Distribution of Political Affiliation", x = "Party", y = "Count")
+```
+
+## 6. Visualization (Numeric by Categorical)
+
+[Add your commentary. This is the "Boxplot" from Slide 15. What story does it tell?]
+
+```{r}
+#| label: "chunk-viz-boxplot"
+#| echo: true
+
+# Create a boxplot of platform_count by party_simple
+ggplot(w144_wrangled, aes(x = ..., y = ...)) + # Replace ...
+  geom_boxplot() +
+  labs(title = "Platform Use by Political Party", x = "Party", y = "Number of Platforms")
+```
+
+## 7. Visualization (Categorical by Categorical)
+
+[Add your commentary. What does `position = "fill"` do? This is the "Stacked Bar Chart" from Slide 15.]
+[Pedagogical Note: `as.factor()` is used on the `fill` variable because it's a number (0/1) that we want ggplot to treat as a *category*, not as a continuous number. This is a common and important trick.]
+
+```{r}
+#| label: "chunk-viz-stackedbar"
+#| echo: true
+
+# Create a filled stacked bar chart of TikTok use by f_race
+# We must filter out NA values for a clean plot
+w144_wrangled %>%
+  filter(!is.na(f_race) & !is.na(uses_tiktok)) %>%
+  ggplot(aes(x = ..., fill = as.factor(...))) + # Replace ...
+  geom_bar(position = "fill") +
+  labs(title = "Proportion of TikTok Use by Race/Ethnicity", x = "Race/Ethnicity", y = "Proportion", fill = "Uses TikTok")
+```
+
+## 8. Visualization (Small Multiples)
+
+[Add your commentary. What is `facet_wrap()` doing here? Why is this more powerful than just one histogram? This is the "Small Multiples" concept from Slide 15.]
+
+```{r}
+#| label: "chunk-viz-facet"
+#| echo: true
+
+# Create faceted histograms of fb_purpose_score by party_simple
+w144_wrangled %>%
+  filter(!is.na(fb_purpose_score) & !is.na(party_simple)) %>%
+  ggplot(aes(x = ...)) + # Replace ...
+  geom_histogram(binwidth = 1) +
+  facet_wrap(~ ...) + # Replace ...
+  labs(title = "Facebook 'Purpose' Score by Party", x = "FB Purpose Score", y = "Count")
+```

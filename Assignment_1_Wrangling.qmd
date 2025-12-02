@@ -1,0 +1,145 @@
+---
+title: "Assignment 1: Data Wrangling Memo"
+author: Jenna Bracken
+format: 
+  pdf:
+    documentclass: article
+    fontfamily: Inter
+    fontsize: 11pt
+    margin-left: 1in
+    margin-right: 1in
+    margin-top: 1in
+    margin-bottom: 1in
+editor: visual
+---
+
+# Assignment 1: The Research "Mise en Place"
+
+## Conceptual Focus
+
+This assignment covers **Chapter 12: Data Wrangling**. As your slides note, this is the "mise en place" of research. Raw client data is messy. Our "Garbage in, garbage out" motto means we must create a clean, reliable, and reproducible workflow *before* any analysis can begin. Your R script is your "precise, shareable, and repeatable recipe" that ensures your work is transparent and accurate.
+
+------------------------------------------------------------------------
+
+# Data Prep Memo
+
+**To:** Alex Chen (Director of Insights)
+
+**From:** Jenna Bracken
+
+**Subject:** Data Prep Memo for 2025 Digital Landscape Brief
+
+To prepare the raw survey data for analysis, I performed a series of transformations to ensure accuracy and consistency. First, I recoded social media usage variables into binary indicators (uses_facebook, uses_instagram, uses_tiktok, uses_x), where 1 represents active use and 0 represents non-use or refusal. This step simplifies modeling and interpretation, allowing us to easily calculate engagement metrics and run logistic regressions later. Next, I created a composite variable called platform_count by summing these four binary indicators. This provides a quick measure of how many platforms each respondent uses, which is useful for segmenting audiences by overall social media engagement. I also generated a simplified party affiliation variable (party_simple) by combining two original variables—party identification and party leaning—into three categories: Republican, Democrat, and Independent/Other. This categorical transformation ensures clarity for reporting and aligns with the client’s need for high-level political segmentation. Finally, I built an index score (fb_purpose_score) to capture the breadth of reasons respondents use Facebook. By summing seven binary indicators for different purposes, we created a scale ranging from 0 to 7, which reflects engagement depth rather than mere presence. These transformations collectively turn messy raw data into structured, analysis-ready variables that support clear insights for the client presentation.
+
+\newpage
+
+# Appendix: R Code and Commentary
+
+This appendix contains all R code used to import, clean, and transform the raw `ATP_W144_excerpt.csv` file into the analysis-ready `w144_wrangled.RData` file.
+
+## 1. Setup
+
+In RStudio, these options are commonly used to control how code and output appear in the final report. The line #\| label: "chunk-setup" assigns a label to the code chunk, making it easier to reference later. The option #\| echo: true ensures that the code itself is displayed in the rendered document, which is helpful for reporting. Meanwhile, #\| message: false and #\| warning: false suppress messages and warnings from appearing in the output, keeping the document clean and professional. Finally, library(tidyverse) loads a collection of packages for data manipulation and visualization.
+
+```{r}
+#| label: "chunk-setup"
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+## 2. Importing
+
+You would use this code to import your dataset into R for analysis. The chunk options #\| label: "chunk-import" and #\| echo: true are Quarto settings that label the code chunk and ensure the code is displayed in the rendered document, which is helpful for organization and transparency. The function read_csv() from the readr package (part of the tidyverse) is used to load a CSV file—in this case, "ATP_W144_excerpt.csv"—into R as a data frame called w144_raw. This step is essential because you need the raw data in your R environment before you can clean, transform, or analyze it.
+
+```{r}
+#| label: "chunk-import"
+#| echo: true
+
+
+w144_raw <- read.csv("ATP_W144_excerpt.csv")
+```
+
+## 3. Transforming: Binary Platform Use
+
+This code is used to transform raw survey data into a cleaner, analysis-ready format by creating binary variables for social media usage. The original variable `smuse_a_w144` uses codes where `1` means “Yes,” `2` means “No,” and `99` means “Refused.” For statistical modeling and interpretation, it’s common to recode these into binary indicators, assigning `1` for “Yes” and `0` for “No” or “Refused.” The `mutate()` function from the `dplyr` package is applied to the raw dataset (`w144_raw`) to add new columns such as `uses_facebook`, which is defined using `if_else()` to implement this logic. Additional placeholders for Instagram, TikTok, and X are included so you can apply the same transformation to those variables. This approach ensures consistency, simplifies analysis, and makes the data suitable for models like logistic regression or for generating clear summaries.
+
+```{r}
+#| label: "chunk-transform-binary"
+#| echo: true
+
+w144_wrangled <- w144_raw %>%
+  mutate(
+    uses_facebook = if_else(smuse_a_w144 == 1, 1, 0),
+    uses_instagram = if_else(smuse_a_w144 == 1, 1, 0), 
+    uses_tiktok = if_else(smuse_a_w144 == 1, 1, 0), 
+    uses_x = if_else(smuse_a_w144 == 1, 1, 0)
+    )
+```
+
+## 4. Transforming: Composite Scale (platform_count)
+
+This step creates a composite measure of social media engagement by summing the four binary variables (uses_facebook, uses_instagram, uses_tiktok, uses_x). Because each variable is coded as 1 for “Yes” and 0 for “No,” adding them together produces a simple count of how many platforms each respondent uses. This is what our slides refer to as a Mathematical Transformation: converting multiple indicators into a single numeric scale that can be used for descriptive statistics or modeling.
+
+```{r}
+#| label: "chunk-transform-platform-count"
+#| echo: true
+
+w144_wrangled <- w144_wrangled %>%
+  mutate(
+    # Hint: Add your four new uses_... variables together.
+    platform_count = uses_facebook + uses_instagram + uses_tiktok + uses_x
+  )
+```
+
+## 5. Transforming: Categorical (party_simple)
+
+We combine f_party and f_partyln because respondents may identify with a party or lean toward one, and both indicators are needed for accurate classification. The case_when() function applies logical conditions to assign respondents into three categories: “Republican,” “Democrat,” or “Independent/Other.” This is a Categorical Transformation, simplifying multiple numeric codes into meaningful labels for analysis and reporting.
+
+```{r}
+#| label: "chunk-transform-party"
+#| echo: true
+
+w144_wrangled <- w144_wrangled %>%
+  mutate(
+    party_simple = case_when(f_party_final == 1 | f_partyln_final == 1 ~ "Republican",
+      f_party_final == 2 | f_partyln_final == 2 ~ "Democrat",
+      f_party_final == 3 | f_party_final == 4   ~ "Independent/Other",
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+## 6. Transforming: Index Score (fb_purpose_score)
+
+This index measures the breadth of reasons respondents use Facebook. Each fbwhy\_ variable represents a specific purpose, coded as 1 if selected. By checking (fbwhy_x_w144 == 1) for each and adding them together, we leverage R’s behavior of treating TRUE as 1 and FALSE as 0. The result is a composite score ranging from 0 to 7, indicating how many distinct purposes a respondent reported. This is a Composite Index Score, useful for understanding engagement depth.
+
+```{r}
+#| label: "chunk-transform-fb-score"
+#| echo: true
+
+w144_wrangled <- w144_wrangled %>%
+  mutate((fbwhy_a_w144 == 1) + 
+           (fbwhy_b_w144 == 1) +
+           (fbwhy_c_w144 == 1) +
+           (fbwhy_d_w144 == 1) +
+           (fbwhy_e_w144 == 1) +
+           (fbwhy_f_w144 == 1) +
+           (fbwhy_g_w144 == 1)
+
+  )
+```
+
+## 7. Exporting
+
+We save the wrangled dataset as an .RData file because it preserves R-specific data structures (such as factors and attributes) and is more efficient for loading in future R sessions. Unlike .csv, which stores plain text, .RData ensures that all variable types and metadata remain intact, supporting reproducibility and consistency in analysis.
+
+```{r}
+#| label: "chunk-export"
+#| echo: true
+
+# Save the final wrangled data
+save(w144_wrangled, file = "w144_wrangled.RData")
+```

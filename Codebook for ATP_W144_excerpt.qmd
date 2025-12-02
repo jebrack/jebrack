@@ -1,0 +1,1419 @@
+# Codebook: ATP W144 Excerpt
+
+## Dataset Description
+
+This codebook describes the variables in the `ATP_W144_excerpt.csv` dataset.
+
+This dataset is a random sample of **626 respondents** from Wave 144 (March 18-24, 2024) of the Pew Research Center's American Trends Panel (ATP). The original dataset (`ATP_W144.csv`) contained 10,454 respondents.
+
+This excerpt was created by:
+
+1.  Filtering the original dataset to include only respondents who took the survey in English (`LANG_W144 == 1`).
+
+2.  Selecting a subset of the original variables.
+
+3.  Taking a random sample of 626 respondents from the filtered data.
+
+4.  Converting all variable names to lowercase.
+
+## Variable List
+
+### Respondent & Survey Variables
+
+#### qkey
+
+-   **Label:** Unique ID
+
+-   **Notes:** A unique numeric identifier for each respondent.
+
+#### device_type_w144
+
+-   **Label:** The device used in the latest access of the survey link
+
+-   **Values:**
+
+    -   `1`: Laptop/PC
+
+    -   `2`: Smartphone
+
+    -   `3`: Tablet
+
+    -   `4`: SmartTV
+
+    -   `5`: None of the above
+
+### Social Media Platform Usage (General)
+
+This section groups the high-level usage questions asked for each of the four platforms.
+
+#### Platform Use (Yes/No)
+
+-   **Question:** "Please indicate whether or not you ever use the following websites or apps."
+
+-   **Values:**
+
+    -   `1`: Yes, use
+
+    -   `2`: No, do not use
+
+    -   `99`: Refused
+
+-   **Variables:**
+
+    -   `smuse_a_w144`: Facebook
+
+    -   `smuse_c_w144`: Instagram
+
+    -   `smuse_d_w144`: TikTok
+
+    -   `smuse_i_w144`: X (formerly Twitter)
+
+#### Frequency of Use
+
+-   **Question:** "How often, if ever, do you use... \[ASKED IF USES PLATFORM\]"
+
+-   **Values:**
+
+    -   `1` or `1E`: Several times a day
+
+    -   `2`: About once a day
+
+    -   `3`: A few times a week
+
+    -   `4`: Every few weeks
+
+    -   `5`: Less often
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked (Does not use this platform)
+
+-   **Variables:**
+
+    -   `smuse2_a_w144`: Facebook
+
+    -   `smuse2_c_w144`: Instagram
+
+    -   `smuse2_d_w144`: TikTok
+
+    -   `smuse2_i_w144`: X (formerly Twitter)
+
+#### Frequency of Getting News on Platform
+
+-   **Question:** "How often, if ever, do you get news from... \[ASKED IF USES PLATFORM\]"
+
+-   **Values:**
+
+    -   `1`: Often
+
+    -   `2`: Sometimes
+
+    -   `3`: Hardly ever
+
+    -   `4`: Never
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked (Does not use this platform)
+
+-   **Variables:**
+
+    -   `socialnews2_a_w144`: Facebook
+
+    -   `socialnews2_c_w144`: Instagram
+
+    -   `socialnews2_d_w144`: TikTok
+
+    -   `socialnews2_i_w144`: X (formerly Twitter)
+
+### Platform-Specific Questions: Facebook
+
+These questions were asked only of respondents who use Facebook (`smuse_a_w144 = 1`).
+
+#### Reasons for Use (fbwhy\_\*)
+
+-   **Question:** "Please indicate how important, if at all, each of the following is as a reason for why you use Facebook."
+
+-   **Values:**
+
+    -   `1`: Very important
+
+    -   `2`: Somewhat important
+
+    -   `3`: Not too important
+
+    -   `4`: Not at all important
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked (Does not use Facebook)
+
+-   **Variables:**
+
+    -   `fbwhy_a_w144`: To see what friends and family are up to
+
+    -   `fbwhy_b_w144`: To find/get information
+
+    -   `fbwhy_c_w144`: To share your own content (like photos, videos or your opinions)
+
+    -   `fbwhy_d_w144`: To see funny or entertaining content
+
+    -   `fbwhy_e_w144`: To buy or sell products
+
+    -   `fbwhy_f_w144`: To connect with others who share your interests or hobbies
+
+    -   `fbwhy_g_w144`: To get news
+
+#### Impact and Influence
+
+-   **`fbdemocracy_w144`**
+
+    -   **Label:** Overall, do you think Facebook has been a... for American democracy?
+
+    -   **Values:**
+
+        -   `1`: Mostly good thing
+
+        -   `2`: Mostly bad thing
+
+        -   `3`: Neither good nor bad thing
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`fbinfluence_w144`**
+
+    -   **Label:** How much influence do you think Facebook has on the news people get in the U.S.?
+
+    -   **Values:**
+
+        -   `1`: A great deal of influence
+
+        -   `2`: A fair amount of influence
+
+        -   `3`: Not too much influence
+
+        -   `4`: No influence at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### News Experience
+
+-   **News Sources (fbsource\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "How much of the news you see on Facebook comes from..."
+
+    -   **Values:**
+
+        -   `1`: Most
+
+        -   `2`: Some
+
+        -   `3`: A little
+
+        -   `4`: None
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `fbsource_a_w144`: Friends and family
+
+        -   `fbsource_b_w144`: News organizations or journalists
+
+        -   `fbsource_c_w144`: Advocacy groups, interest groups or politicians
+
+        -   `fbsource_d_w144`: People you don't know personally
+
+        -   `fbsource_e_w144`: Influencers or celebrities
+
+-   **News Topics (fbtype\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "When you see news on Facebook, how often is it about..."
+
+    -   **Values:**
+
+        -   `1`: Almost always
+
+        -   `2`: Often
+
+        -   `3`: Sometimes
+
+        -   `4`: Rarely
+
+        -   `5`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `fbtype_a_w144`: National news
+
+        -   `fbtype_b_w144`: Local news
+
+        -   `fbtype_c_w144`: News about topics that interest you (e.g., sports, technology, entertainment)
+
+        -   `fbtype_d_w144`: International news
+
+-   **`fbacc_w144`** \[Asked if get news on platform\]
+
+    -   **Label:** In your experience, how often, if ever, do you see news on Facebook that seems inaccurate?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Hardly ever
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Platform Sentiment & Experience
+
+-   **`fbelse_w144`**
+
+    -   **Label:** If Facebook were no longer available, how much, if at all, would you miss it?
+
+    -   **Values:**
+
+        -   `1`: A great deal
+
+        -   `2`: Some
+
+        -   `3`: Not much
+
+        -   `4`: Not at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`fbworn_w144`**
+
+    -   **Label:** How often, if ever, do you feel 'worn out' by the things you see on Facebook?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`fbharass_w144`**
+
+    -   **Label:** In your experience on Facebook, how often, if ever, do you see content that appears to be harassing or bullying?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Content Sharing
+
+-   **`fbshare_w144`**
+
+    -   **Label:** Thinking about the things you post on Facebook... Share or post things related to news or current events?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`fbsharepol_w144`**
+
+    -   **Label:** Thinking about the things you post on Facebook... Share or post things related to politics or political issues?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **Reasons for Sharing Political Content (fbwhysp\_\*)** \[Asked if share political content\]
+
+    -   **Question:** "How important... is each as a reason why you share..."
+
+    -   **Values:**
+
+        -   `1`: Very important
+
+        -   `2`: Somewhat important
+
+        -   `3`: Not too important
+
+        -   `4`: Not at all important
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `fbwhysp_a_w144`: It's important to me that others see my views on these issues
+
+        -   `fbwhysp_b_w144`: I want to show support for a cause or issue
+
+        -   `fbwhysp_c_w144`: I think the content is interesting or important
+
+        -   `fbwhysp_d_w144`: I think the content will be entertaining to my followers
+
+        -   `fbwhysp_e_w144`: I'm trying to influence what others think about an issue
+
+        -   `fbwhysp_f_w144`: I want to let others know what I'm doing to get involved with an issue
+
+### Platform-Specific Questions: Instagram
+
+These questions were asked only of respondents who use Instagram (`smuse_c_w144 = 1`).
+
+#### Reasons for Use (igwhy\_\*)
+
+-   **Question:** "Please indicate how important, if at all, each of the following is as a reason for why you use Instagram."
+
+-   **Values:**
+
+    -   `1`: Very important
+
+    -   `2`: Somewhat important
+
+    -   `3`: Not too important
+
+    -   `4`: Not at all important
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked
+
+-   **Variables:**
+
+    -   `igwhy_a_w144`: To see what friends and family are up to
+
+    -   `igwhy_b_w144`: To find/get information
+
+    -   `igwhy_c_w144`: To share your own content
+
+    -   `igwhy_d_w144`: To see funny or entertaining content
+
+    -   `igwhy_e_w144`: To buy or sell products
+
+    -   `igwhy_f_w144`: To connect with others who share your interests or hobbies
+
+    -   `igwhy_g_w144`: To get news
+
+#### Impact and Influence
+
+-   **`igdemocracy_w144`**
+
+    -   **Label:** Overall, do you think Instagram has been a... for American democracy?
+
+    -   **Values:**
+
+        -   `1`: Mostly good thing
+
+        -   `2`: Mostly bad thing
+
+        -   `3`: Neither good nor bad thing
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`iginfluence_w144`**
+
+    -   **Label:** How much influence do you think Instagram has on the news people get in the U.S.?
+
+    -   **Values:**
+
+        -   `1`: A great deal of influence
+
+        -   `2`: A fair amount of influence
+
+        -   `3`: Not too much influence
+
+        -   `4`: No influence at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### News Experience
+
+-   **News Sources (igsource\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "How much of the news you see on Instagram comes from..."
+
+    -   **Values:**
+
+        -   `1`: Most
+
+        -   `2`: Some
+
+        -   `3`: A little
+
+        -   `4` or `4DOM`: None
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `igsource_a_w144`: Friends and family
+
+        -   `igsource_b_w144`: News organizations or journalists
+
+        -   `igsource_c_w144`: Advocacy groups, interest groups or politicians
+
+        -   `igsource_d_w144`: People you don't know personally
+
+        -   `igsource_e_w144`: Influencers or celebrities
+
+-   **News Topics (igtype\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "When you see news on Instagram, how often is it about..."
+
+    -   **Values:**
+
+        -   `1`: Almost always
+
+        -   `2`: Often
+
+        -   `3`: Sometimes
+
+        -   `4`: Rarely
+
+        -   `5`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `igtype_a_w144`: National news
+
+        -   `igtype_b_w144`: Local news
+
+        -   `igtype_c_w144`: News about topics that interest you
+
+        -   `igtype_d_w144`: International news
+
+-   **`igacc_w144`** \[Asked if get news on platform\]
+
+    -   **Label:** In your experience, how often, if ever, do you see news on Instagram that seems inaccurate?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Hardly ever
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Platform Sentiment & Experience
+
+-   **`igelse_w144`**
+
+    -   **Label:** If Instagram were no longer available, how much, if at all, would you miss it?
+
+    -   **Values:**
+
+        -   `1`: A great deal
+
+        -   `2`: Some
+
+        -   `3`: Not much
+
+        -   `4`: Not at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`igworn_w144`**
+
+    -   **Label:** How often, if ever, do you feel 'worn out' by the things you see on Instagram?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4` or `4What`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`igharass_w144`**
+
+    -   **Label:** In your experience on Instagram, how often, if ever, do you see content that appears to be harassing or bullying?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Content Sharing
+
+-   **`igshare_w144`**
+
+    -   **Label:** Thinking about the things you post on Instagram... Share or post things related to news or current events?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`igsharepol_w144`**
+
+    -   **Label:** Thinking about the things you post on Instagram... Share or post things related to politics or political issues?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **Reasons for Sharing Political Content (igwhysp\_\*)** \[Asked if share political content\]
+
+    -   **Question:** "How important... is each as a reason why you share..."
+
+    -   **Values:**
+
+        -   `1`: Very important
+
+        -   `2`: Somewhat important
+
+        -   `3`: Not too important
+
+        -   `4`: Not at all important
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `igwhysp_a_w144`: It's important to me that others see my views on these issues
+
+        -   `igwhysp_b_w144`: I want to show support for a cause or issue
+
+        -   `igwhysp_c_w144`: I think the content is interesting or important
+
+        -   `igwhysp_d_w144`: I think the content will be entertaining to my followers
+
+        -   `igwhysp_e_w144`: I'm trying to influence what others think about an issue
+
+        -   `igwhysp_f_w144`: I want to let others know what I'm doing to get involved with an issue
+
+### Platform-Specific Questions: TikTok
+
+These questions were asked only of respondents who use TikTok (`smuse_d_w144 = 1`).
+
+#### Reasons for Use (tkwhy\_\*)
+
+-   **Question:** "Please indicate how important, if at all, each of the following is as a reason for why you use TikTok."
+
+-   **Values:**
+
+    -   `1`: Very important
+
+    -   `2`: Somewhat important
+
+    -   `3`: Not too important
+
+    -   `4`: Not at all important
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked
+
+-   **Variables:**
+
+    -   `tkwhy_a_w144`: To see what friends and family are up to
+
+    -   `tkwhy_b_w144`: To find/get information
+
+    -   `tkwhy_c_w144`: To share your own content
+
+    -   `tkwhy_d_w144`: To see funny or entertaining content
+
+    -   `tkwhy_e_w144`: To buy or sell products
+
+    -   `tkwhy_f_w144`: To connect with others who share your interests or hobbies
+
+    -   `tkwhy_g_w144`: To get news
+
+#### Impact and Influence
+
+-   **`tkdemocracy_w144`**
+
+    -   **Label:** Overall, do you think TikTok has been a... for American democracy?
+
+    -   **Values:**
+
+        -   `1`: Mostly good thing
+
+        -   `2`: Mostly bad thing
+
+        -   `3`: Neither good nor bad thing
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`tkinfluence_w144`**
+
+    -   **Label:** How much influence do you think TikTok has on the news people get in the U.S.?
+
+    -   **Values:**
+
+        -   `1`: A great deal of influence
+
+        -   `2`: A fair amount of influence
+
+        -   `3`: Not too much influence
+
+        -   `4`: No influence at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### News Experience
+
+-   **News Sources (tksource\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "How much of the news you see on TikTok comes from..."
+
+    -   **Values:**
+
+        -   `1`: Most
+
+        -   `2`: Some
+
+        -   `3`: A little
+
+        -   `4`: None
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `tksource_a_w144`: Friends and family
+
+        -   `tksource_b_w144`: News organizations or journalists
+
+        -   `tksource_c_w144`: Advocacy groups, interest groups or politicians
+
+        -   `tksource_d_w144`: People you don't know personally
+
+        -   `tksource_e_w144`: Influencers or celebrities
+
+-   **News Topics (tktype\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "When you see news on TikTok, how often is it about..."
+
+    -   **Values:**
+
+        -   `1`: Almost always
+
+        -   `2`: Often
+
+        -   `3`: Sometimes
+
+        -   `4`: Rarely
+
+        -   `5`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `tktype_a_w144`: National news
+
+        -   `tktype_b_w144`: Local news
+
+        -   `tktype_c_w144`: News about topics that interest you
+
+        -   `tktype_d_w144`: International news
+
+-   **`tkacc_w144`** \[Asked if get news on platform\]
+
+    -   **Label:** In your experience, how often, if ever, do you see news on TikTok that seems inaccurate?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Hardly ever
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Platform Sentiment & Experience
+
+-   **`tkelse_w144`**
+
+    -   **Label:** If TikTok were no longer available, how much, if at all, would you miss it?
+
+    -   **Values:**
+
+        -   `1`: A great deal
+
+        -   `2`: Some
+
+        -   `3`: Not much
+
+        -   `4`: Not at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`tkworn_w144`**
+
+    -   **Label:** How often, if ever, do you feel 'worn out' by the things you see on TikTok?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`tkharass_w144`**
+
+    -   **Label:** In your experience on TikTok, how often, if ever, do you see content that appears to be harassing or bullying?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Content Sharing
+
+-   **`tkshare_w144`**
+
+    -   **Label:** Thinking about the things you post on TikTok... Share or post things related to news or current events?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`tksharepol_w144`**
+
+    -   **Label:** Thinking about the things you post on TikTok... Share or post things related to politics or political issues?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **Reasons for Sharing Political Content (tkwhysp\_\*)** \[Asked if share political content\]
+
+    -   **Question:** "How important... is each as a reason why you share..."
+
+    -   **Values:**
+
+        -   `1`: Very important
+
+        -   `2`: Somewhat important
+
+        -   `3`: Not too important
+
+        -   `4`: Not at all important
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `tkwhysp_a_w144`: It's important to me that others see my views on these issues
+
+        -   `tkwhysp_b_w144`: I want to show support for a cause or issue
+
+        -   `tkwhysp_c_w144`: I think the content is interesting or important
+
+        -   `tkwhysp_d_w144`: I think the content will be entertaining to my followers
+
+        -   `tkwhysp_e_w144`: I'm trying to influence what others think about an issue
+
+        -   `tkwhysp_f_w144`: I want to let others know what I'm doing to get involved with an issue
+
+### Platform-Specific Questions: X (formerly Twitter)
+
+These questions were asked only of respondents who use X (`smuse_i_w144 = 1`).
+
+#### Reasons for Use (xwhy\_\*)
+
+-   **Question:** "Please indicate how important, if at all, each of the following is as a reason for why you use X."
+
+-   **Values:**
+
+    -   `1`: Very important
+
+    -   `2`: Somewhat important
+
+    -   `3`: Not too important
+
+    -   `4`: Not at all important
+
+    -   `99`: Refused
+
+    -   `NA`: Not asked
+
+-   **Variables:**
+
+    -   `xwhy_a_w144`: To see what friends and family are up to
+
+    -   `xwhy_b_w144`: To find/get information
+
+    -   `xwhy_c_w144`: To share your own content
+
+    -   `xwhy_d_w144`: To see funny or entertaining content
+
+    -   `xwhy_e_w144`: To buy or sell products
+
+    -   `xwhy_f_w144`: To connect with others who share your interests or hobbies
+
+    -   `xwhy_g_w144`: To get news
+
+#### Impact and Influence
+
+-   **`xdemocracy_w144`**
+
+    -   **Label:** Overall, do you think X has been a... for American democracy?
+
+    -   **Values:**
+
+        -   `1`: Mostly good thing
+
+        -   `2`: Mostly bad thing
+
+        -   `3`: Neither good nor bad thing
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`xinfluence_w144`**
+
+    -   **Label:** How much influence do you think X has on the news people get in the U.S.?
+
+    -   **Values:**
+
+        -   `1`: A great deal of influence
+
+        -   `2`: A fair amount of influence
+
+        -   `3`: Not too much influence
+
+        -   `4`: No influence at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### News Experience
+
+-   **News Sources (xsource\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "How much of the news you see on X comes from..."
+
+    -   **Values:**
+
+        -   `1`: Most
+
+        -   `2`: Some
+
+        -   `3`: A little
+
+        -   `4`: None
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `xsource_a_w144`: Friends and family
+
+        -   `xsource_b_w144`: News organizations or journalists
+
+        -   `xsource_c_w144`: Advocacy groups, interest groups or politicians
+
+        -   `xsource_d_w144`: People you don't know personally
+
+        -   `xsource_e_w144`: Influencers or celebrities
+
+-   **News Topics (xtype\_\*)** \[Asked if get news on platform\]
+
+    -   **Question:** "When you see news on X, how often is it about..."
+
+    -   **Values:**
+
+        -   `1`: Almost always
+
+        -   `2`: Often
+
+        -   `3`: Sometimes
+
+        -   `4`: Rarely
+
+        -   `5`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `xtype_a_w144`: National news
+
+        -   `xtype_b_w144`: Local news
+
+        -   `xtype_c_w144`: News about topics that interest you
+
+        -   `xtype_d_w144`: International news
+
+-   **`xacc_w144`** \[Asked if get news on platform\]
+
+    -   **Label:** In your experience, how often, if ever, do you see news on X that seems inaccurate?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Hardly ever
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Platform Sentiment & Experience
+
+-   **`xelse_w144`**
+
+    -   **Label:** If X were no longer available, how much, if at all, would you miss it?
+
+    -   **Values:**
+
+        -   `1`: A great deal
+
+        -   `2`: Some
+
+        -   `3`: Not much
+
+        -   `4`: Not at all
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`xworn_w144`**
+
+    -   **Label:** How often, if ever, do you feel 'worn out' by the things you see on X?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`xharass_w144`**
+
+    -   **Label:** In your experience on X, how often, if ever, do you see content that appears to be harassing or bullying?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+#### Content Sharing
+
+-   **`xshare_w144`**
+
+    -   **Label:** Thinking about the things you post on X... Share or post things related to news or current events?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **`xsharepol_w144`**
+
+    -   **Label:** Thinking about the things you post on X... Share or post things related to politics or political issues?
+
+    -   **Values:**
+
+        -   `1`: Often
+
+        -   `2`: Sometimes
+
+        -   `3`: Rarely
+
+        -   `4`: Never
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+-   **Reasons for Sharing Political Content (xwhysp\_\*)** \[Asked if share political content\]
+
+    -   **Question:** "How important... is each as a reason why you share..."
+
+    -   **Values:**
+
+        -   `1V`: Very important
+
+        -   `2`: Somewhat important
+
+        -   `3`: Not too important
+
+        -   `4`: Not at all important
+
+        -   `99`: Refused
+
+        -   `NA`: Not asked
+
+    -   **Variables:**
+
+        -   `xwhysp_a_w144`: It's important to me that others see my views on these issues
+
+        -   `xwhysp_b_w144`: I want to show support for a cause or issue
+
+        -   `xwhysp_c_w144`: I think the content is interesting or important
+
+        -   `xwhysp_d_w144`: I think the content will be entertaining to my followers
+
+        -   `xwhysp_e_w144`: I'm trying to influence what others think about an issue
+
+        -   `xwhysp_f_w144`: I want to let others know what I'm doing to get involved with an issue
+
+### Demographic Variables
+
+#### f_state
+
+-   **Label:** State
+
+-   **Values:**
+
+    -   `1`: Alabama
+
+    -   `2`: Alaska
+
+    -   ... (Standard FIPS codes) ...
+
+    -   `56`: Wyoming
+
+#### f_usr
+
+-   **Label:** Urban/Suburban/Rural (Census)
+
+-   **Values:**
+
+    -   `1`: Urban
+
+    -   `2`: Suburban
+
+    -   `3`: Rural
+
+    -   `9`: Refused
+
+#### f_metro
+
+-   **Label:** Metropolitan status
+
+-   **Values:**
+
+    -   `1`: Metropolitan
+
+    -   `2`: Non-metropolitan
+
+    -   `9`: Refused
+
+#### f_race
+
+-   **Label:** Race/Ethnicity (6-category)
+
+-   **Values:**
+
+    -   `1`: White non-Hispanic
+
+    -   `2`: Black non-Hispanic
+
+    -   `3`: Hispanic
+
+    -   `4`: Asian non-Hispanic
+
+    -   `5`: Other/Mixed race non-Hispanic
+
+    -   `99`: Refused
+
+#### f_attend
+
+-   **Label:** Church attendance
+
+-   **Values:**
+
+    -   `1`: More than once a week
+
+    -   `2`: Once a week
+
+    -   `3`: Once or twice a month
+
+    -   `4`: A few times a year
+
+    -   `5`: Seldom
+
+    -   `6`: Never
+
+    -   `99`: Refused
+
+#### f_party
+
+-   **Label:** Party
+
+-   **Values:**
+
+    -   `1`: Republican
+
+    -   `2`: Democrat
+
+    -   `3`: Independent
+
+    -   `4`: Something else
+
+    -   `9s`: Refused
+
+#### f_partyln
+
+-   **Label:** Party lean
+
+-   **Values:**
+
+    -   `1`: Republican
+
+    -   `2`: Democrat
+
+    -   `9`: Refused
+
+    -   `NA`: Not asked (Replied Republican or Democrat to F_PARTY)
+
+#### f_inc_sdt1
+
+-   **Label:** Family income
+
+-   **Values:**
+
+    -   `1`: Less than \$30,000
+
+    -   `2`: \$30,000 to less than \$40,000
+
+    -   `3`: \$40,000 to less than \$50,000
+
+    -   `4`: \$50,000 to less than \$60,000
+
+    -   `5`: \$60,000 to less than \$70,000
+
+    -   `6`: \$70,000 to less than \$80,000
+
+    -   `7G`: \$80,000 to less than \$90,000
+
+    -   `8`: \$90,000 to less than \$100,000
+
+    -   `9`: \$100,000 or more
+
+    -   `99`: Refused
+
+#### f_ideo
+
+-   **Label:** Ideology
+
+-   **Values:**
+
+    -   `1`: Very conservative
+
+    -   `2`: Conservative
+
+    -   `3`: Moderate
+
+    -   `4`: Liberal
+
+    -   `5`: Very liberal
+
+    -   `99`: Refused
+
+#### f_intfreq
+
+-   **Label:** Frequency of internet use
+
+-   **Values:**
+
+    -   `1`: Almost constantly
+
+    -   `2`: Several times a day
+
+    -   `3`: About once a day
+
+    -   `4`: Several times a week
+
+    -   `5`: Less often
+
+    -   `99`: Refused

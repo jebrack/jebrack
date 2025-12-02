@@ -1,0 +1,228 @@
+---
+title: "Assignment 2: Initial Findings Memo"
+author: "Jenna Bracken"
+format: 
+  pdf:
+    documentclass: article
+    fontfamily: Inter
+    fontsize: 11pt
+    margin-left: 1in
+    margin-right: 1in
+    margin-top: 1in
+    margin-bottom: 1in
+editor: visual
+---
+```{r}
+#| label: "chunk-setup"
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+load("~/Documents/MC501/Projects/w144_wrangled.RData")
+```
+
+# Assignment 2: "The First Look"
+
+## Conceptual Focus
+
+This assignment covers **Chapter 13: Descriptive Statistics and Visualization**. Last week, we finished our "mise en place." Now, we need to find the "story" in the data. This is where we find the "wow" insights for the client. As your slides note, we will use two toolkits: \* **Descriptive Statistics:** Summarizing data with precision (e.g., `summary()`, `count()`). \* **Data Visualization:** Summarizing data with intuitive pictures (e.g., `ggplot2`).
+
+------------------------------------------------------------------------
+
+# Initial Insights Memo
+
+**To:** Alex Chen (Director of Insights)
+
+**From:** Jenna Bracken
+
+**Subject:** Initial Insights for 2025 Digital Landscape Brief
+
+## Section 1: Sample Snapshot
+
+The sample includes respondents from multiple political parties and racial/ethnic groups. Based on the frequency tables, the largest share of respondents identify as Democrat, followed closely by Republican, with a small proportion identifying as Independent/Other. For race and ethnicity, the majority of respondents fall into category 1 (likely representing the largest racial group in the coding scheme), with smaller proportions in categories 2–5 and very few in category 99 (likely “Other” or “Prefer not to answer”). This indicates that while the sample is diverse, it is weighted toward certain political and racial groups, which may affect how representative the findings are of the broader population.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-desc-cat"
+# This chunk runs the code from the appendix 
+# and displays ONLY the output tables.
+```
+
+## Section 2: Potential Client-Facing Insights
+
+The histogram shows the distribution of platform_count among respondents. The data are slightly right-skewed, meaning most respondents use a moderate number of platforms, while a smaller group uses many platforms. This suggests that the “average” social media user in our sample is active on a few platforms, but there is a minority of highly active users who may behave differently.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-hist"
+# This chunk displays the histogram.
+```
+
+The bar chart shows that most respondents identify as Democrat, followed by Republican, with very few identifying as Independent/Other. For a client, this means the sample leans toward certain political affiliations, which could influence attitudes or behaviors observed in the study.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-bar"
+# This chunk displays the bar chart.
+```
+
+The boxplot compares platform use across political parties. Visually, the median number of platforms used appears similar across groups, with overlapping interquartile ranges. While there are some outliers, the overall pattern suggests that platform use habits do not differ substantially by political affiliation based on this visual alone.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-boxplot"
+# This chunk displays the boxplot.
+```
+
+The stacked bar chart shows the proportion of TikTok users across racial/ethnic groups. Some groups have noticeably higher adoption rates than others. This insight is important for our non-profit client because it highlights which communities are more reachable on TikTok, helping guide targeted outreach and engagement strategies.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-stackedbar"
+# This chunk displays the stacked bar chart.
+```
+
+The faceted histograms show the distribution of Facebook “purpose” scores for each political party. While all groups share similar ranges, one party (e.g., Democrats) appears to have slightly higher scores on average, suggesting more purposeful use of Facebook. This could inform strategies for tailoring content or outreach based on political affiliation.
+
+```{r}
+#| echo: false
+#| ref.label: "chunk-viz-facet"
+# This chunk displays the faceted histogram.
+```
+
+\newpage
+
+# Appendix: R Code and Commentary
+
+## 1. Setup
+
+This code chunk initializes the analysis environment by setting options to display the code while suppressing messages and warnings for cleaner output. It then loads the `tidyverse` package, which provides tools for data manipulation and visualization, and imports previously prepared data from the file `w144_wrangled.RData`. This ensures that all necessary libraries and data are available for subsequent steps in the workflow.
+
+
+## 2. Descriptive Statistics (Categorical)
+
+This code chunk calculates and displays the frequency distribution for two categorical variables: party_simple and f_racethnmod. The count() function groups the data by each category of the specified variable and returns the number of observations (n) in each group. The subsequent mutate(percent = n / sum(n) \* 100) step creates a new column that expresses these counts as percentages of the total sample, making it easier to interpret relative proportions. These tables tell us how the sample is distributed across political party affiliation and racial/ethnic categories. For example, if one category has a much higher percentage, it indicates that the sample is not evenly distributed and may be skewed toward certain groups, which is important for understanding representativeness and potential biases in the data.
+
+```{r}
+#| label: "chunk-desc-cat"
+#| echo: true
+
+# Get frequencies for party_simple
+# Hint: Use count() on the 'party_simple' variable, then use mutate() to calculate the percent.
+w144_wrangled %>%
+  count(party_simple) %>%
+  mutate(percent = n / sum(n))
+
+# Get frequencies for f_racethnmod
+# Hint: Use count() on the 'f_racethnmod' variable, then use mutate() to calculate the percent.
+w144_wrangled %>%
+  count(f_racethnmod) %>%
+  mutate(percent = n / sum(n))
+```
+
+## 3. Descriptive Statistics (Numeric)
+
+The summary() function provides key descriptive statistics for numeric variables: the minimum (smallest value), first quartile (25th percentile), median (middle value), mean (average), third quartile (75th percentile), and maximum (largest value). In your output, the minimum is 0, the median is 4, and the mean is about 2.997. The difference between the mean and median matters because it tells us about the distribution’s shape. If the mean is lower than the median, as in this case, the data are likely left-skewed (a few very low values pull the mean down). This is important because skewness affects how we interpret averages—median is often a better measure of central tendency when data are skewed. Overall, these numbers suggest most respondents have around 4 platforms, but some have very few, creating an uneven distribution.
+
+```{r}
+#| label: "chunk-desc-num"
+#| echo: true
+
+# Get summary for platform_count
+# Hint: Use summary() on the 'platform_count' variable.
+summary(w144_wrangled$platform_count) # Try summary(your_variable)
+
+# Get summary for fb_purpose_score
+# Hint: Use summary() on the 'fb_purpose_score' variable.
+summary(w144_wrangled$fb_purpose_score) # Try summary(your_variable)
+```
+
+## 4. Visualization (Single Numeric)
+
+This code uses the ggplot2 package to create a histogram showing the distribution of the platform_count variable. The ggplot() function initializes the plot and specifies the dataset (w144_wrangled) and aesthetic mappings through aes(). The aes() function defines how data are mapped to visual elements—in this case, x = platform_count means the number of platforms will be shown on the x-axis. The geom_histogram() layer adds the histogram itself, with binwidth = 1 grouping values into intervals of one unit, and fill and color controlling the bar colors. Finally, labs() adds a descriptive title and axis labels, and theme_minimal() applies a clean, simple theme. Overall, this visualization helps us see how many platforms respondents typically use and whether the distribution is skewed or concentrated around certain values.
+
+```{r}
+#| label: "chunk-viz-hist"
+#| echo: true
+
+# Create a histogram of platform_count
+# Skeleton: Fill in the variable for x
+ggplot(w144_wrangled, aes( x = platform_count)) +
+  geom_histogram(binwidth = 1, fill = "steelblue", color = "white") +
+  labs(title = "Distribution of Platform Count", x = "Number of Platforms Used", y = "Count"
+  
+ ) +
+  theme_minimal()
+
+
+```
+
+## 5. Visualization (Single Categorical)
+
+This code uses the ggplot2 package to create a bar chart showing the distribution of political affiliation in the sample. The ggplot() function initializes the plot and specifies the dataset (w144_wrangled) and aesthetic mappings through aes(). The aes() function defines how data are mapped to visual properties—in this case, x = party_simple means each bar represents a category of political party. The geom_bar() layer automatically counts the number of observations in each category and displays them as bars, with fill = "steelblue" setting the bar color. The labs() function adds a descriptive title and axis labels. This visualization helps us quickly see which political affiliations are most common and whether the sample is balanced or skewed toward certain groups.
+
+```{r}
+#| label: "chunk-viz-bar"
+#| echo: true
+
+
+ggplot(w144_wrangled, aes(x = party_simple)) +
+  geom_bar(fill = "steelblue") +
+  labs(title = "Distribution of Political Affiliation", x = "Party", y = "Count")
+```
+
+## 6. Visualization (Numeric by Categorical)
+
+This code creates a boxplot comparing the number of platforms used (platform_count) across political affiliation categories (party_simple). The aes() function maps party_simple to the x-axis and platform_count to the y-axis. The geom_boxplot() layer displays the median, interquartile range, and potential outliers for each group, providing a visual summary of how platform use varies by political party. This helps identify differences in central tendency and spread between groups, which may indicate patterns in social media behavior across political affiliations. For example, if one party shows a higher median platform count, it suggests that group tends to use more platforms on average.
+
+```{r}
+#| label: "chunk-viz-boxplot"
+#| echo: true
+
+
+ggplot(w144_wrangled, aes(x = party_simple, y = platform_count)) +
+  geom_boxplot() +
+  labs(title = "Platform Use by Political Party", x = "Party", y = "Number of Platforms")
+```
+
+## 7. Visualization (Categorical by Categorical)
+
+This code creates a stacked bar chart showing the proportion of TikTok use across racial/ethnic categories. The aes() function maps f_racethnmod to the x-axis and uses fill = as.factor(uses_tiktok) to color segments based on whether respondents use TikTok. The geom_bar(position = "fill") layer stacks the bars and normalizes them to represent proportions rather than raw counts, making it easy to compare relative TikTok usage across groups. The position = "fill" argument ensures each bar is scaled to 100%, so differences reflect proportions rather than sample size. This visualization highlights demographic differences in platform adoption.
+
+```{r}
+#| label: "chunk-viz-stackedbar"
+#| echo: true
+
+# Create a filled stacked bar chart of TikTok use by f_racethnmod
+# Skeleton: Fill in the variables for x and fill
+w144_wrangled %>%
+  filter(!is.na(f_racethnmod) & !is.na(uses_tiktok)) %>%
+  ggplot(aes(x = f_racethnmod, fill = as.factor(uses_tiktok))) +
+  geom_bar(position = "fill") +
+  labs(title = "Proportion of TikTok Use by Race/Ethnicity", x = "Race/Ethnicity", y = "Proportion", fill = "Uses TikTok")
+```
+
+## 8. Visualization (Small Multiples)
+
+This code uses facet_wrap(\~ party_simple) to create multiple histograms of Facebook purpose scores (fb_purpose_score), one for each political party category. Faceting splits the data into separate panels, allowing side-by-side comparison of distributions across groups. This approach is more powerful than a single histogram because it reveals differences in shape, spread, and central tendency between categories without overlapping data. For example, if one party shows consistently higher scores, it suggests distinct patterns of Facebook use among political affiliations.
+
+```{r}
+#| label: "chunk-viz-facet"
+#| echo: true
+
+library(ggplot2)
+library(dplyr)
+
+# Create faceted histograms of fb_purpose_score by party_simple
+w144_wrangled %>%
+  filter(!is.na(fb_purpose_score) & !is.na(party_simple)) %>%
+  ggplot(aes(x = fb_purpose_score)) +
+  geom_histogram(binwidth = 1, fill = "steelblue", color = "white") +
+  facet_wrap(~ party_simple) +
+  labs(
+    title = "Facebook 'Purpose' Score by Party",
+    x = "FB Purpose Score",
+    y = "Count"
+  )
+```
