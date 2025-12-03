@@ -1,0 +1,55 @@
+\contentsline {chapter}{\numberline {1}Journal Home}{4}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Add a new entry}{4}{subsection.1.0.1}%
+\contentsline {chapter}{\numberline {2}2025-09-03}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Choose \textbf {one} prompt to answer}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Response}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Word Count \& Range Check}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {3}2025-09-03-2}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Choose \textbf {one} prompt to answer}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Response}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Word Count \& Range Check}{8}{section.3.3}%
+\contentsline {chapter}{\numberline {4}2025-09-03}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Choose \textbf {one} prompt to answer}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Response}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Word Count \& Range Check}{10}{section.4.3}%
+\contentsline {chapter}{\numberline {5}2025-09-15}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Choose \textbf {one} prompt to answer}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Response}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Word Count \& Range Check}{12}{section.5.3}%
+\contentsline {chapter}{\numberline {6}2025-09-23}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Choose \textbf {one} prompt to answer}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Response}{13}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Word Count \& Range Check}{14}{section.6.3}%
+\contentsline {chapter}{\numberline {7}2025-09-28}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Choose \textbf {one} prompt to answer}{15}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Response}{15}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Word Count \& Range Check}{16}{section.7.3}%
+\contentsline {chapter}{\numberline {8}2025-10-07}{17}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Choose \textbf {one} prompt to answer}{17}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Response}{17}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Word Count \& Range Check}{18}{section.8.3}%
+\contentsline {chapter}{\numberline {9}2025-10-13}{19}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Choose \textbf {one} prompt to answer}{19}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Response}{19}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Word Count \& Range Check}{20}{section.9.3}%
+\contentsline {chapter}{\numberline {10}2025-10-21}{21}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Choose \textbf {one} prompt to answer}{21}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Response}{21}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Word Count \& Range Check}{22}{section.10.3}%
+\contentsline {chapter}{\numberline {11}2025-10-28}{23}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Choose \textbf {one} prompt to answer}{23}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Response}{23}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Word Count \& Range Check}{24}{section.11.3}%
+\contentsline {chapter}{\numberline {12}2025-11-06}{25}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Choose \textbf {one} prompt to answer}{25}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Response}{25}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Word Count \& Range Check}{26}{section.12.3}%
+\contentsline {chapter}{\numberline {13}2025-11-12}{27}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Choose \textbf {one} prompt to answer}{27}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Response}{27}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Word Count \& Range Check}{28}{section.13.3}%
+\contentsline {chapter}{\numberline {14}2025-11-18}{29}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Choose \textbf {one} prompt to answer}{29}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Response}{29}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Word Count \& Range Check}{30}{section.14.3}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
